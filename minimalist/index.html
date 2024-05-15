@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'>
+		<title>Anish - A Tech Enthusiast</title>
+
+		<style>
+
+			html, body {
+			    margin: 0;
+			    padding: 0;
+			    font-size: 16px;
+			    font-family:"Arvo";
+			} 
+			#outer
+			{
+				display:flex;
+				flex-direction: column;
+			}
+			.header
+			{
+				background-color:black;
+			}
+			h3{
+				margin-top: 1.2rem;
+				margin-bottom: 0.5rem;
+				
+			}
+			.page
+			{
+				background-color:black;
+				color:#cdcdc0;
+				width: 100%;
+				min-height: 100vh;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			#right{
+				min-height: 60vh;
+			}
+			.page2-onwards{
+				background-color: black;
+				color:#cdcdc0;
+				align-items: start;
+			}
+			.page2-section1{
+				display:flex;
+				flex-direction: column;
+				margin: 0.7rem 5rem;
+				width: default;
+			}
+			.section-header{
+				margin: 0.7rem 0;
+				font-size: 1.5rem;
+			}
+			.page2-section1-content{
+				display:flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				gap: 1rem;
+			}
+			.skilldiv{
+				padding: 0.5rem;
+				border: 0.1rem solid white;
+				border-radius: 0.7rem;
+				font-family:"Arvo";
+				font-size: 1.2rem;
+			}
+			.job{
+				font-size: 1.2rem;
+			}
+			.job-employer{
+				font-size: 1.5rem;
+				margin-bottom: 0.1rem;
+			}
+			.job-title, .work-summary, .work-exp{
+				margin: 0.2rem 0rem;
+				font-size: 1rem;
+			}
+			.work-exp{
+				display: none;
+			}
+			.job-title:hover .work-exp{
+				display: block;
+
+			}
+			#page1-content{
+				display:flex;
+				flex-direction: row;
+				align-items: normal;
+				justify-content: normal;
+			}
+			#content{
+				min-width: 50rem;
+			}
+			#links
+			{
+				margin-top: 2rem;
+				list-style-type:none;
+				float:right;
+				text-align:right;
+				font-family:"Arvo","Papyrus";
+			}
+			#links li
+			{
+				float:left;
+				margin-right: 1.5rem;
+				font-size: 1.5rem;
+			}
+			a
+			{
+				color:#dddddd;
+				text-decoration :none;
+			}
+			a:hover
+			{
+				text-decoration:underline;
+
+			}
+			#rightMain
+			{
+				font-family:"Arvo";
+				word-spacing: 0.5rem;
+				font-size: 3.5rem;
+			}
+			#rightMain::after
+			{
+				content:'|';
+				animation:  blink 0.8s ease infinite;
+			}
+			#about
+			{
+				font-family:"Arvo";
+				font-size: 1.2rem;
+				text-align: justify;
+				opacity:0;
+				transition: font-size 0.2s, opacity 0.2s;
+			}
+			#cp-menu{
+				display: flex;
+				flex-flow: row wrap;
+				align-items: center;
+				justify-content: center;
+				color:#dddddd;
+			}
+			#about p a
+			{
+				color:#cdcdc0;
+				text-decoration:none;
+			}
+			#about p a:hover
+			{
+				text-decoration:underline;	
+			}
+			@keyframes blink
+			{
+				0%{
+					opacity:0;
+				}
+				50%{
+					opacity:1;
+				}
+				100%{
+					opacity:0;
+				}
+			}
+			#outerTH
+			{
+				opacity:1;
+				margin-left: auto;
+			}
+			#tetrahederon{
+				width:7rem;
+				height:7rem;
+				transform-style: preserve-3d;
+				animation:spinTetrahederon 4s ease infinite alternate;
+			}
+			@keyframes spinTetrahederon
+			{
+				from{
+					transform: rotateY(0deg);
+				}
+				to{
+					transform:rotateY(360deg);
+				}
+			}
+			.face{
+				position:absolute;
+				width:0rem;
+				height:0rem;
+				opacity:0.5;
+				
+				border-radius: 5%;
+				border:2px solid transparent;
+
+				border-left:3.5rem solid transparent;
+				border-right:3.5rem solid transparent;
+				border-bottom:7rem solid;
+			}
+			.fir{
+				transform-origin:bottom;
+				transform: rotateX(-30deg);
+			}
+			.sec{
+				transform-origin: bottom;
+				transform:rotateX(30deg);
+			}
+			.thi{
+				transform-origin: top;
+				transform:rotateZ(180deg) translateY(-7rem) rotateY(90deg) translateZ(-3.5rem) rotateX(30deg);
+			}
+			.fou{
+				transform-origin: top;
+				transform:rotateZ(180deg) translateY(-7rem) rotateY(-90deg) translateZ(-3.5rem) rotateX(30deg);
+			}
+			.footer
+			{
+				order:3;
+				font-family: "Arvo";
+    			font-size: 1rem;
+    			width: 100%;
+    			background-color:#1a2930;
+    			color: lightgray;
+    			text-align: center;
+			}
+			footer p
+			{
+				text-align:center;
+			}
+			footer p span{
+				line-height: 1rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="outer">
+			<header class="header">
+				<ul id="links">
+					<li><a href="https://anishk74.github.io/resume.pdf">Resume</a></li>
+				</ul>
+			</header>
+			<div id="right" class="page">
+				<div id="page1-content">
+					<div id="content">
+						<div id="rightMain"></div>
+						<div id="about">
+							<p>SSE at 
+								<a href="https://nference.com/" target="_blank"><b>nference</b></a> 
+								<br/>
+								CSE graduate from
+								<a href="http://www.iiitkalyani.ac.in" target="_blank"><b>IIIT Kalyani</b></a>
+							</p>
+						</div>
+					</div>
+					<div id="outerTH">
+						<div id="tetrahederon">
+							<div class="face fir"></div>
+							<div class="face sec"></div>
+							<div class="face thi"></div>
+							<div class="face fou"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="page2" class="page page2-onwards">
+				<div class="page2-section1">
+					<div class="section-header">Skills</div>
+					<div class=page2-section1-content>
+						<div class="skilldiv">Python</div>
+						<div class="skilldiv">Bash</div>
+						<div class="skilldiv">GCP</div>
+						<div class="skilldiv">Numpy, Pandas</div>
+						<div class="skilldiv">Open-CV, Tesseract</div>
+						<div class="skilldiv">Django, Flask</div>
+					</div>
+				</div>
+				<div class="page2-section1">
+					<div class="section-header">Fields of Interest</div>
+					<div class=page2-section1-content>
+						<div class="skilldiv">Backend Development</div>
+						<div class="skilldiv">System Design</div>
+						<div class="skilldiv">Algorithms</div>
+						<div class="skilldiv">Computer Vision</div>
+						<div class="skilldiv">Machine Learning</div>
+					</div>
+				</div>
+				<div class="page2-section1">
+					<div class="section-header">Familiar with</div>
+					<div class=page2-section1-content>
+						<div class="skilldiv">C, C++</div>
+						<div class="skilldiv">HTML, CSS, JavaScript</div>
+						<div class="skilldiv">TensorFlow, MXNet</div>
+						<div class="skilldiv">MATLAB/Octave</div>
+					</div>
+				</div>
+			</div>
+			<div id="page3" class="page page2-onwards">
+				<div class="job page2-section1">
+					<div class="job-employer">
+							Nference
+					</div>
+					<div id="page3-section1">
+						<div class="job-title">
+							Senior Software Engineer
+							</br>
+							2024-04 - Present
+						</div>
+						<div class="work-summary">
+							Working as part of De-Identification team to deliver high quality data.
+						</div>
+						<div class="work-exp">
+							<div class="work-task">
+								Extended Publisher-Subscriber model to support genomics data brought up in VCF/AVRO format ensuring that extraction, de-identification and re-wriiting.
+							</div>
+							<div class="work-task">
+								Added support for de-identification of CARTO data
+							</div>
+						</div>
+						<div>
+						</div>
+					</div>
+					<div id="page3-section2">
+						<div class="job-title">
+							Software Engineer
+							</br>
+							2021-08 - 2024-03
+						</div>
+						<div class="work-summary">
+							Worked as part of Auth team to ensure access-control + Worked as part of De-Identification team to support new formats of data.
+						</div>
+						<div class="work-exp">
+							<div class="work-task">
+								Implemented access control by adding 60+ APIs based on requests from clients and internal app owners.
+							</div>
+							<div class="work-task">
+								Extended Publisher-Subscriber model for de-identification of Tumor Reports delivered as PDF/TIFF files.
+							</div>
+							<div class="work-task">
+								Built a pipeline to analyze the data-loss and update de-identification logic for structured data.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="job page2-section1">
+					<div class="job-employer">
+						Awiros
+					</div>
+					<div id="page3-section3">
+						<div class="job-title">
+							Computer Vision and Machine Learning Engineer
+							</br>
+							2021-06 - 2021-07
+						</div>
+						<div class="work-summary">
+							Worked on analyzing datasets and creating models for age/gender classification.
+						</div>
+						<div class="work-exp">
+							<div class="work-task">
+								Trained gender classification model with accuracy of 0.9388 and F1-score of 0.9303.
+							</div>
+							<div class="work-task">
+								Analyzed the datasets Casia and Facescrub, having 494k+ and 43k+ images respectively, in terms of class-distribution, aspect-ratio and blur.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="job page2-section1">
+					<div class="job-employer">
+						Vaultedge Software Pvt. Ltd.
+					</div>
+					<div id="page3-section4">
+						<div class="job-title">
+							Backend Intern
+							</br>
+							2021-04 - 2021-05
+						</div>
+						<div class="work-summary">
+							Worked as part of Auth team to ensure access-control + Worked as part of De-Identification team to support new formats of data.
+						</div>
+						<div class="work-exp">
+							<div class="work-task">
+								Migrated existing FIFO Queue job-scheduling to Priority Queue.
+							</div>
+							<div class="work-task">
+								Developed a backend to connect MongoDB to Grafana for visuallization of logs.
+							</div>
+						</div>
+						<div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer">
+				<p>
+					<span>Designed and Developed by Anish</span>
+          		</p>
+       		 </div>
+		</div>
+		
+		<script>
+			if(screen.width<500)
+				document.getElementById("outerTH").style.visibility="hidden";
+			var s=["Hi, I\'m Anish Kharwar"];
+		    var write=1;
+		    var index=0;
+		    var j=0;
+		    var addDelay=30;
+		    var deleteDelay=25;
+		    window.onload = function typeWriter(){
+		    	
+				if(write==1)
+				{
+					document.getElementById("rightMain").innerHTML+=s[index][j];
+					j++;
+					
+
+					if(j==s[index].length)
+					{
+						write=0;
+						if(index==s.length-1)
+						{
+							setTimeout(function(){
+								//for right>content>about appearence 
+								var rightDelay=300;
+								if(innerWidth>=1100){
+									rightDelay=200;
+								}
+								setTimeout(function(){
+									document.getElementById("about").style.opacity="1";
+									document.getElementById("about").style.marginTop="0rem";
+									document.getElementById("left").style.height="auto";
+								},rightDelay);
+							},250);
+							return;
+						}
+						j+=7;
+						setTimeout(typeWriter,addDelay+1500);
+					}
+					else if(s[index][j-1]==',')
+						setTimeout(typeWriter,addDelay+1000);
+					else
+						setTimeout(typeWriter,addDelay+Math.random()*30);
+				}
+				
+				else if(write==0)
+				{
+					x=document.getElementById('rightMain').innerHTML;
+					document.getElementById('rightMain').innerHTML=x.slice(0,j);
+					j--;
+					if(j==7)
+					{
+						write=1;
+						index++;
+						j=0;
+						setTimeout(typeWriter, deleteDelay+200);
+					}
+					else
+						setTimeout(typeWriter, deleteDelay + Math.random()*10);
+				}
+			};
+
+
+		</script>
+	</body>
+
+</html>
